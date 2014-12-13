@@ -8,7 +8,6 @@ body {
     background: #fff;
     margin: 3em auto;
     border: 1px solid #ddd;
-    border-width: 0 1px;
 }
 
 #header {
@@ -25,6 +24,16 @@ body {
     position: relative;
 }
 
+article table {
+    width: 100%;
+}
+
+/* 代码 */
+p code {
+    margin: 0 0.2em;
+    padding: 0 4px;
+    background: #eee;
+}
 pre {
     padding: 12px 0;
     border: none;
@@ -36,4 +45,33 @@ pre code,
 .hljs {
     background: transparent;
     padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* 评论 */
+#container #ds-thread #ds-reset .ds-meta ,
+#container #ds-thread #ds-reset .ds-powered-by ,
+#container #ds-thread #ds-reset .ds-comments-info,
+#container #ds-thread #ds-reset li.ds-post-placeholder {
+    display: none;
+}
+#container #ds-thread #ds-reset li.ds-post {
+    border-top: none;
+}
+#container #ds-thread #ds-reset li.ds-tab a.ds-current {
+    border: none;
+    background: transparent;
+}
+#container #ds-thread #ds-reset .ds-comments {
+    border: none;
+}
+#container .ds-post-reply,
+#container .ds-post-likes,
+#container .ds-post-repost,
+#container .ds-post-report {
+    display: none ! important;
+}
+#container .ds-post:hover .ds-post-reply {
+    display: inline ! important;
 }
