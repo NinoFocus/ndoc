@@ -1,7 +1,7 @@
 doctype thml
 html
   head
-    title #{title || '起码知识库'}
+    title #{title || 'Nino Tips'}
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
     link(rel="stylesheet", href="/stylesheets/docs.css")
@@ -12,20 +12,17 @@ html
     header.navbar.navbar-static-top.navbar-inverse.docs-navbar(role="banner")
       div.container
         div.navbar-header
-          a.navbar-brand(href="http://www.qima-inc.com" target="_blank") 有赞科技
+          a.navbar-brand(href="http://nino.tips" target="_blank") Nino Tips
         nav.collapse.navbar-collapse(role="navigation")
           ul.nav.navbar-nav
             li(class="#{(dir && dir.path === '/') ? 'active' : ''}")
-              a(href="/") 知识库首页
+              a(href="/") 首页
             if title
               li.active
                 a(href="#") 》#{title}
             if dir && dir.title && dir.path !== '/'
               li.active
                 a(href="#") 》#{dir.title}
-          ul.nav.navbar-nav.navbar-right
-            li
-              a(href="http://git.qima-inc.com/youzan/ndoc" target="_blank") GitLab
     section.container
       block content
     footer

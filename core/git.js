@@ -3,13 +3,14 @@ var
     Q = require('q'),
     gravatar = require('../helper/gravatar'),
     exec = Q.denodeify(require('child_process').exec),
+    docRoot = require('../setting').docRoot,
     SEP = '#=#-#-#=#';
 
 var Git = {
 
     log: function(filepath) {
         var defer = Q.defer();
-        var command = 'git --no-pager log \
+        var command = 'cd ' + docRoot + ' && git --no-pager log \
                         --pretty=format:"%h' + SEP + '%an' + SEP + '%ae' + SEP + '%ad' + SEP + '%s" \
                         --no-merges \
                         --follow \
