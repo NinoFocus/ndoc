@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  +render_dir(dir, '')
+
+mixin render_dir(dir)
+  div(class="dir dir-level-#{dir.level}")
+
+    if dir.level !== 1
+      h2.dir-title
+        span.glyphicon.glyphicon-book
+        a(href="/page#{dir.path}")= dir.title
+    if dir.post && dir.post.length
+      ul.dir-files
+        each post in dir.post
+          li.dir-file
+            a(href="/page#{post.path}")= post.title
+
+  if dir.dir && dir.dir.length
+    each _dir in dir.dir
+      +render_dir(_dir)
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var app = require('./app'),
+    Cache = require('./core/cache');
+
+if(process.argv.indexOf('--cached') != -1) {
+    console.log('缓存系统已经启动。');
+    Cache.enable = true;
+}
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+    console.log('服务器已经启动，通过浏览器访问 => ', 'http://127.0.0.1:' + server.address().port);
+});
