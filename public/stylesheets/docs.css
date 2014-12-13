@@ -17,6 +17,8 @@ body {
 
 #header a {
     color: #eee;
+    text-shadow: 0px 0px 5px #aaa;
+    text-decoration: none;
 }
 
 #container {
