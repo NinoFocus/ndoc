@@ -1,26 +1,5 @@
 extends layout
 
 block content
-  div.row
-    article.post.col-md-9.clearfix(role="main")
-      div.post-content.markdown-body !{content || '文章内容为空 - -||'}
-      div#disqus_thread
-    aside.col-md-3
-      - if(authors && authors.length)
-        section.post-author
-          h1 作者
-          ul.clearfix
-            each author in authors
-              li
-                img.post-author-img(src="#{author.avatar}?s=120" data-toggle="tooltip" data-placement="bottom" title="#{author.name}")
-      - if(logs && logs.length)
-        section.post-log
-          h1 修改记录
-          ul
-            each log in logs
-              li.clearfix( data-toggle="tooltip" data-placement="left" title="#{log.date}")
-                img.post-log-img(src="#{log.avatar}?s=120")
-                div.post-log-message
-                  p
-                    a(href="/diff/#{log.before_hash}/#{log.after_hash}") #{log.message}
+  article.markdown-body(role="main") !{content || '文章内容为空 - -||'}
 

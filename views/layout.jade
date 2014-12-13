@@ -2,32 +2,17 @@ doctype thml
 html
   head
     title #{title || 'Nino Tips'}
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/typo.css")
     link(rel="stylesheet", href="/stylesheets/docs.css")
     link(rel="stylesheet", href="/stylesheets/highlight.github.css")
     block custom-stylesheet
 
   body
-    header.navbar.navbar-static-top.navbar-inverse.docs-navbar(role="banner")
-      div.container
-        div.navbar-header
-          a.navbar-brand(href="http://nino.tips") Nino Tips
-        nav.collapse.navbar-collapse(role="navigation")
-          ul.nav.navbar-nav
-            li(class="#{(dir && dir.path === '/') ? 'active' : ''}")
-              a(href="/") 首页
-            if title
-              li.active
-                a(href="#") 》#{title}
-            if dir && dir.title && dir.path !== '/'
-              li.active
-                a(href="#") 》#{dir.title}
-    section.container
+
+    section#container.typo
       block content
     footer
 
     script(src="/javascripts/jquery.js")
-    script(src="/javascripts/bootstrap.js")
     script(src="/javascripts/highlight.js")
     script(src="/javascripts/docs.js")
