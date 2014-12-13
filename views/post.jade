@@ -3,10 +3,6 @@ extends layout
 block content
   div.row
     article.post.col-md-9.clearfix(role="main")
-      div.post-edit
-        a.btn.btn-default(href="http://git.qima-inc.com/youzan/ndoc/edit/master/docs/#{filepath}" target="_blank")
-          i.glyphicon.glyphicon-pencil
-          span 编辑
       div.post-content.markdown-body !{content || '文章内容为空 - -||'}
       div#disqus_thread
     aside.col-md-3
