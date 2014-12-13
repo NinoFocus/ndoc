@@ -2,6 +2,6 @@ extends layout
 
 block content
   article.markdown-body(role="main") !{content || '文章内容为空 - -||'}
-  div.ds-thread(data-thread-key="#{filepath}" data-title="#{title}" data-url="http://nino.tips/page/#{filepath}")
+  div.ds-thread(data-thread-key="#{id}" data-title="#{title}" data-url="http://nino.tips/page/#{filepath}")
 
 

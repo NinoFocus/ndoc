@@ -20,6 +20,8 @@ function Post(filepath) {
     this.authors = null;
     // 文档修改历史
     this.logs = null;
+    // 文章唯一ID
+    this.id = '';
 }
 
 _.extend(Post.prototype, {
@@ -44,12 +46,17 @@ _.extend(Post.prototype, {
     },
 
     toJSON: function() {
+        var logs = this.logs || [];
+        var id = (logs[logs.length - 1] || {}).after_hash || this.filepath;
+
         return {
+            id: id,
             title: this.title,
             content: this.content,
+            filepath: this.filepath,
+
             authors: this.authors,
             logs: this.logs,
-            filepath: this.filepath
         };
     },
 
