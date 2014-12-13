@@ -6,10 +6,18 @@ body {
     width: 90%;
     max-width: 960px;
     background: #fff;
-    margin: 3em auto 0;
-    padding-top: 2em;
+    margin: 3em auto;
     border: 1px solid #ddd;
     border-width: 0 1px;
+}
+
+#header {
+    background: #333;
+    padding: 0 10%;
+}
+
+#header a {
+    color: #eee;
 }
 
 #container {
